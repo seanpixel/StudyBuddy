@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import StudyGuide from './StudyGuide';
+import StudyGuide from './studyguide';
 import './App.css';
 
 function App() {
