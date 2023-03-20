@@ -7,9 +7,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Replace this with your own API key
-openai.api_key = os.env["OPENAI_API_KEY"]
+openai.api_key = os.environ["OPENAI_API_KEY"]
 
 @app.route('/subtopics', methods=['POST'])
+@cross_origin()
 def generate_subtopics():
     topic = request.json['topic']
 
@@ -40,6 +41,7 @@ def get_subtopics(topic):
         return []
     
 @app.route('/study-guide', methods=['POST'])
+@cross_origin()
 def generate_study_guide():
     subtopic = request.json['subtopic']
     topic = request.json['topic']
