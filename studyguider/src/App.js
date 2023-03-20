@@ -8,7 +8,7 @@ function App() {
   const [studyGuide, setStudyGuide] = useState('');
   const [currentSubtopic, setCurrentSubtopic] = useState('');
   const [showStudyGuide, setShowStudyGuide] = useState(false);
-  const url = "https://studybuddy-backend.web.app/"
+  const url = "http://0.0.0.0:5001"
 
   const handleSubtopicClick = async (subtopic) => {
     setCurrentSubtopic(subtopic);
