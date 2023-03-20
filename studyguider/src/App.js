@@ -8,7 +8,7 @@ function App() {
   const [studyGuide, setStudyGuide] = useState('');
   const [currentSubtopic, setCurrentSubtopic] = useState('');
   const [showStudyGuide, setShowStudyGuide] = useState(false);
-  const url = "https://studybuddy-backend.herokuapp.com"
+  const url = "https://studybuddy-backend.web.app/"
 
   const handleSubtopicClick = async (subtopic) => {
     setCurrentSubtopic(subtopic);
