@@ -1,13 +1,13 @@
 from flask import Flask, request, jsonify
 import openai
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import os
 
 app = Flask(__name__)
 CORS(app)
 
 # Replace this with your own API key
-openai.api_key = os.environ["OPENAI_API_KEY"]
+openai.api_key = os.eniron["OPENAI_API_KEY"]
 
 @app.route('/subtopics', methods=['POST'])
 @cross_origin()
@@ -32,7 +32,8 @@ def get_subtopics(topic):
         )
 
         subtopics_raw = response.choices[0].text.strip().split('\n')
-        subtopics = [subtopic.strip() for subtopic in subtopics_raw if subtopic.strip()]
+        subtopics = [subtopic.strip().replace("-", "") for subtopic in subtopics_raw if subtopic.strip()]
+        print(subtopics)
 
         return subtopics
 
