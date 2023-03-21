@@ -8,7 +8,7 @@ function App() {
   const [studyGuide, setStudyGuide] = useState('');
   const [currentSubtopic, setCurrentSubtopic] = useState('');
   const [showStudyGuide, setShowStudyGuide] = useState(false);
-  const url = "https://studybuddy-backend.herokuapp.com"
+  const url = "https://studybuddy-backend.web.app"
 
   const handleSubtopicClick = async (subtopic) => {
     setCurrentSubtopic(subtopic);
@@ -25,6 +25,7 @@ function App() {
       const response = await fetch(`${url}/subtopics`, {
         method: "POST",
         headers: {
+          'Access-Control-Allow-Origin': '*',
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ topic }),
@@ -41,6 +42,7 @@ function App() {
       const response = await fetch(`${url}/study-guide`, {
         method: "POST",
         headers: {
+          'Access-Control-Allow-Origin': '*',
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ topic, subtopic }),
